@@ -28,17 +28,17 @@ class Rectangulo:
         return base == altura
 
 if __name__ == "__main__":
- p1 = Punto(1, 3)
- p2 = Punto(5, 1)
+ p1 = Punto(33, 4)
+ p2 = Punto(23, 5)
 
-# Crear instancia de la clase Rectángulo
+
 rectangulo = Rectangulo(p1, p2)
 
-# Calcular y mostrar perímetro y área del rectángulo
+
 print("Perímetro:", rectangulo.perimetro())
 print("Área:", rectangulo.area())
 
-# Verificar si el rectángulo es un cuadrado
+
 if rectangulo.cuadrado():
     print("El rectángulo es un cuadrado.")
 else:

@@ -1,0 +1,45 @@
+class Punto:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+class Rectangulo:
+    def __init__(self, punto1, punto2):
+        self.esquina_superior_izquierdo = punto1
+        self.esquina_inferior_derecho = punto2
+
+    def calcular_lados(self):
+        base = abs(self.esquina_inferior_derecho.x - self.esquina_superior_izquierdo.x)
+        altura = abs(self.esquina_inferior_derecho.y - self.esquina_superior_izquierdo.y)
+        return base, altura
+
+    def perimetro(self):
+        base, altura = self.calcular_lados()
+        perimetro = 2 * (base + altura)
+        return perimetro
+
+    def area(self):
+        base, altura = self.calcular_lados()
+        area = base * altura
+        return area
+
+    def cuadrado(self):
+        base, altura = self.calcular_lados()
+        return base == altura
+
+if __name__ == "__main__":
+ p1 = Punto(1, 3)
+ p2 = Punto(5, 1)
+
+# Crear instancia de la clase Rectángulo
+rectangulo = Rectangulo(p1, p2)
+
+# Calcular y mostrar perímetro y área del rectángulo
+print("Perímetro:", rectangulo.perimetro())
+print("Área:", rectangulo.area())
+
+# Verificar si el rectángulo es un cuadrado
+if rectangulo.cuadrado():
+    print("El rectángulo es un cuadrado.")
+else:
+    print("El rectángulo no es un cuadrado.")
